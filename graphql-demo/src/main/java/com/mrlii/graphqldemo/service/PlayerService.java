@@ -22,8 +22,16 @@ public class PlayerService {
     }
 
     public Optional<Player> findById(Integer id){
-        return players.stream().filter(player -> player.id().equals(id)).findFirst();
+        Optional<Player> player = players.stream()
+                .filter(p -> p.id().equals(id))
+                .findFirst();
 
+        if(player.isPresent()){
+            return player;
+        }
+        else{
+            throw new IllegalArgumentException("Invalid Player id");
+        }
     }
 
     public Player create(String name, Team team){

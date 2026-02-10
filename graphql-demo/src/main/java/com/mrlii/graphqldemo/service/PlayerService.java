@@ -1,5 +1,7 @@
 package com.mrlii.graphqldemo.service;
 
+import com.mrlii.graphqldemo.exception.InvalidPlayerIdException;
+import com.mrlii.graphqldemo.exception.PlayerNotFoundException;
 import com.mrlii.graphqldemo.model.Player;
 import com.mrlii.graphqldemo.model.Team;
 import jakarta.annotation.PostConstruct;
@@ -30,7 +32,7 @@ public class PlayerService {
             return player;
         }
         else{
-            throw new IllegalArgumentException("Invalid Player id");
+            throw new PlayerNotFoundException("Player not found");
         }
     }
 
@@ -50,7 +52,7 @@ public class PlayerService {
             players.add(updaterPlayer);
             return updaterPlayer;
         }else{
-            throw new IllegalArgumentException("Player not found");
+            throw new InvalidPlayerIdException("Invalid player Id");
         }
     }
 
@@ -62,7 +64,7 @@ public class PlayerService {
             players.remove(optional.get());
         }
         else{
-            throw new IllegalArgumentException("Player not found");
+            throw new InvalidPlayerIdException("Invalid player Id");
         }
 
     }

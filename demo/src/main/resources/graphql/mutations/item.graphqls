@@ -1,0 +1,3 @@
+extend type Mutation {
+createItem(input: CreateItemInput!): ItemResult
+}

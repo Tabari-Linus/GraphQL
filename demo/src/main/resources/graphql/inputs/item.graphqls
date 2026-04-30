@@ -1,4 +1,4 @@
-input ItemInput{
+input CreateItemInput{
     name: String!
     quantity: Int!
     price: Float!

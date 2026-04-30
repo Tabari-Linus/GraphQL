@@ -3,6 +3,7 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Builder
@@ -23,7 +24,7 @@ public class Expense extends AuditableEntity{
     private String description;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private Double totalAmount;
+    private BigDecimal totalAmount;
 
     private Boolean archive = false;
 

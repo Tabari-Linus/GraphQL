@@ -3,6 +3,8 @@ package com.example.demo.dtos;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
+import java.math.BigDecimal;
+
 public record ItemInput(
         @NotBlank(message = "Item Name is required")
         String name,
@@ -11,6 +13,6 @@ public record ItemInput(
         int quantity,
         @NotBlank(message = "Item price is required")
         @Positive(message = "Item price must be a positive value")
-        double price
+        BigDecimal price
 ) {
 }

@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: ${PROFILE:dev}
+  application:
+    name: demo
+
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/testdb}
+    username: ${POSTGRES_USER:dbuser}
+    password: ${POSTGRES_PASSWORD:deepdev}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+
+

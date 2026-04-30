@@ -7,7 +7,7 @@ type ApiResponseExpenseResult{
 type ExpenseResult{
     id: ID!
     title: String!
-    description: String
     totalAmount: Float!
+    description: String
     items: [ItemResult]
 }

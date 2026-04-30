@@ -1,5 +1,5 @@
 extend type Mutation {
-    createExpense(input: ExpenseInput!): ExpenseResult
+    createExpense(input: CreateExpenseInput!): ExpenseResult
     updateExpense(id: ID!): ExpenseResult
     archiveExpense(id: ID!): ExpenseResult
 }

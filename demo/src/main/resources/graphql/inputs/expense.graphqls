@@ -1,0 +1,6 @@
+input CreateExpenseInput{
+    title: String!
+    description: String
+    totalAmount: Float!
+    items: [ItemInput!]
+}

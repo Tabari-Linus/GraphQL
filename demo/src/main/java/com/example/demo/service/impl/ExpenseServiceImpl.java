@@ -6,6 +6,7 @@ import com.example.demo.entities.Expense;
 import com.example.demo.repositories.ExpenseRepository;
 import com.example.demo.service.ExpenseService;
 import com.example.demo.utils.ExpenseServiceHelper;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     private final ExpenseServiceHelper expenseServiceHelper;
 
     @Override
+    @Transactional
     public ExpenseResult createExpense(CreateExpenseInput createExpenseInput) {
         expenseServiceHelper.validateUniqueExpenseTitle(createExpenseInput.title());
         Expense newExpense = Expense.builder()

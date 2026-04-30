@@ -1,0 +1,12 @@
+type ApiResponseItemResult{
+    message: String!
+    success: Boolean!
+    data: ItemResult!
+}
+
+type ItemResult{
+    id: ID
+    name: String
+    quantity: Int
+    price: Float
+}

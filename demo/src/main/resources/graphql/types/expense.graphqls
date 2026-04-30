@@ -1,0 +1,13 @@
+type ApiResponseExpenseResult{
+    message: String!
+    success: Boolean!
+    data: ExpenseResult!
+}
+
+type ExpenseResult{
+    id: ID!
+    title: String!
+    description: String
+    totalAmount: Float!
+    items: [ItemResult]
+}
